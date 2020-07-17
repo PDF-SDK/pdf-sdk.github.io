@@ -1,0 +1,10 @@
+{
+    "title": "缩略图",
+    "removePageConfirm": "你确定删除这个页面吗?",
+    "contextmenu": {
+        "rotateLeft": "逆时针旋转90度",
+        "rotateRight": "顺时针旋转90度",
+        "addBlankPage": "插入空白页",
+        "delete": "删除"
+    }
+}

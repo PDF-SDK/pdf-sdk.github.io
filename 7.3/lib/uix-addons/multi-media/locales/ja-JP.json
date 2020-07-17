@@ -1,0 +1,17 @@
+{
+    "buttons": {
+        "title": "ビデオとオーディオ"
+    },
+    "dialog": {
+        "DeviceNotFoundError": "ビデオが見つかりません。",
+        "TrackStartError": "マイクは既に使用されています。",
+        "PermissionDeniedError": "ブラウザーでマイクを使用できるかどうか確認してください。",
+        "BrowserNotSupported": "ブラウザーはサポートされていません。",
+        "rec-file-label": "ファイル: ",
+        "rec-recorder-label": "録音: ",
+        "rec-recording-tip": "録音中...",
+        "rec-poster-file-label": "ポスターファイル: ",
+        "ok": "OK",
+        "cancel": "キャンセル"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "buttons": {
+        "title": "标识为密文",
+        "redact_text": "密文",
+        "redact_area": "区域",
+        "redact_page": "页面",
+        "redact_search": "搜索 & 标识密文",
+        "apply"      : "应用密文",
+        "ok": "确定",
+        "cancel": "取消"
+    },
+    "tooltips": {
+        "redaction": "标记密文内容",
+        "apply": "移除所有标记的内容"
+    },
+    "dialog": {
+        "apply_alert": "此操作将永久删除标记为密文的内容，且无法撤消。",
+        "redaction_page": {
+            "mark_current_page": "标记当前页面为密文",
+            "mark_specific_page": "标记指定页面为密文",
+            "page_range": "页面范围"
+        }
+    }
+} 

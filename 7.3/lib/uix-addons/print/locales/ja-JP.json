@@ -1,0 +1,26 @@
+{
+    "dialog":{
+        "close":"閉じる",
+        "cancel":"キャンセル",
+        "ok":"OK",
+        "printDialog":{
+            "title":"印刷設定",
+            "range": "印刷範囲",
+            "all": "すべて",
+            "current":"現在のページ",
+            "from":"開始",
+            "to": "終了",
+            "assign": "ページ",
+            "comments": "注釈",
+            "printComments": "注釈を印刷"
+        },
+        "printProcess": "印刷中",
+        "unsupported": {
+            "title": "確認",
+            "message": "ご使用のブラウザーは印刷をサポートしていません。"
+        }
+    },
+    "button-tooltip": {
+        "title": "印刷"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "buttons": {
+        "title": "Redaction",
+        "redact_text": "Mark Text to Redact",
+        "redact_area": "Mark Area to Redact",
+        "redact_page": "Mark Page to Redact",
+        "redact_search": "Find Text",
+        "apply"      : "Apply",
+        "ok": "OK",
+        "cancel": "Cancel"
+    },
+    "tooltips": {
+        "redaction": "Mark content for redaction",
+        "apply": "Apply to remove all marked content"
+    },
+    "dialog": {
+        "apply_alert": "This operation will permanently remove the content that has been marked to redact, and cannot be undone.",
+        "redaction_page": {
+            "mark_current_page": "Mark current page for redaction",
+            "mark_specific_page": "Mark specific page range for redaction",
+            "page_range": "Page range"
+        }
+    }
+}

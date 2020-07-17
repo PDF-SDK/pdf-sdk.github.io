@@ -1,0 +1,17 @@
+{
+    "buttons": {
+        "title": "音频视频"
+    },
+    "dialog": {
+        "DeviceNotFoundError": "没有麦克风。",
+        "TrackStartError": "麦克风被占用。",
+        "PermissionDeniedError": "请允许浏览器使用您的麦克风。",
+        "BrowserNotSupported": "浏览器不支持。",
+        "rec-file-label": "文件：",
+        "rec-recorder-label": "录音：",
+        "rec-recording-tip": "正在录音……",
+        "rec-poster-file-label": "封面海报",
+        "ok": "确定",
+        "cancel": "取消"
+    }
+}
