@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <!-- default(white), black, black-translucent -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Foxit PDF SDK for Web" />
+    <meta name="App-Config"
+          content="fullscreen=yes,useHistoryState=no,transition=no" />
+    <meta name="format-detaction" content="telephone=no,email=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="750" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="renderer" content="webkit" />
+
+    <title>Foxit PDF SDK for Web</title>
+    <link rel="stylesheet"
+          href="https://webviewer-demo.foxitsoftware.com/lib/UIExtension.css" />
+    <style>
+        body {
+            height: 100vh;
+            height: calc(var(--vh, 1vh) * 100);
+        }
+
+        #pdf-ui {
+            top: 20px;
+            bottom: 0;
+            position: absolute;
+            width: 100vw;
+        }
+
+        .fv__ui-toolbar .fv__ui-tab-nav {
+            margin-left: 266px;
+        }
+
+            .fv__ui-toolbar .fv__ui-tab-nav li {
+                color: white;
+            }
+
+                .fv__ui-toolbar .fv__ui-tab-nav li.active {
+                    color: #636363;
+                }
+
+        .fv__ui-mobile #pdf-ui {
+            top: 0;
+        }
+
+        .fv__ui-mobile .fv__ui-nav {
+            display: none;
+        }
+    </style>
+    <script src="https://webviewer-demo.foxitsoftware.com/lib/adaptive.js"></script>
+</head>
+
+<body>
+    <div class="fv__ui-nav">
+        <a class="fv__ui-nav-logo" href="javascript:location.reload()">
+            <i class="fv__icon-logo"></i>
+        </a>
+    </div>
+    <div id="pdf-ui"></div>
+    <script src="https://webviewer-demo.foxitsoftware.com/lib/preload-jr-worker.js"></script>
+    <script></script>
+    <script src="https://webviewer-demo.foxitsoftware.com/lib/UIExtension.full.js"></script>
+    <script>
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = ev => {
+            const status = xhr.status;
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if ((status >= 200 && status < 300) || status === 304) {
+                    var readyWorker = preloadJrWorker({
+                        workerBlobUrl: window.URL.createObjectURL(xhr.response),
+                        enginePath:
+                            "https://webviewer-demo.foxitsoftware.com/jr-engine/gsdk",
+                        fontPath: "https://webviewer-demo.foxitsoftware.com/external/brotli",
+                        licenseSN:
+                            "HY56hRhvJ8D+C/45atsgBhFZpgxl28RMCKl8KSLM0T7g/N+D/UHODw==",
+                        licenseKey:
+                            "PjwcmTRQMS6sbxteo9d0cKEA8Bw5LEVGeyO9gwNKiJCDp7p8SbQb3XyOE218VuITFNe8ZWKX2vPNeqU/lWfPs0Vb47VpoQDNluqYb8+Tx6DgswbNF+pit+Fm+tlEbH2vW/5yKCBoMMjJOSkFSBX8TvARlmDLj4ky8dbPSPojcymBuleYPRFm2vhkcdqo1LJUPIPPXrOOattvHLAV+Z5FhhejjNGT11K+MWCyxMzXWz1C9Vhz/zYCTTfcS8O8Lj9weTvR8JJLcaMJdORmLoX7ppv9DZzqJhczAIDpVgmk4W8wAzXKUN1ULKMspmVoxqq75tz1VNpaFuQjrftdTkoa52U9HuB/4AV1OGYP1ZchklDb9gAORQQbHRPOThpGDlGIVchbEu9ykeYgDzrLXsNgO3CiythKBZrOi2vv6zFrflRzwC09o8AWxgQ4LtAedeXWIcm06HxyPkdGvBjHonX2t1Xc7V2OgLs3zmYqVKWLh6YISbKdPmU7wp3uLLzB5/kxWK4MgsQiAnlwXrYQ0WTVpy+zY/2VRbHFe+xc7Mnp/DMMPS0aMbnXa0Fpb+kcVs231u/dTbzpnzR66zMJ2KdVndBfGbvtnC8S73x2bBYqcvQ4GUIvblWhWae0eBok/a7+qMlhqoueDHeIiqhFWbkfufOpn9gRvcHJAjg93X8yk90V77K3ZkrtOVfhu/X9WDnFUFP7pzCKcdTmJdG1na8BDUCospPfSkOhi9ldWZOuN+IS62i++UZgTZbqA+celmNOFF+Mht6rg5srJzYMDMePszPOvMh/IuQtIYkte5j1djIoQJt6xXOPbiFxZBTvmK4P75Ti3H/7DuwkieUSbF5CdXpi+r3NXJgkUUgM13KGuXrvhX6wmQSE7dT6wDB76hfnjejIg/lTNP15548TIwppDDihiRCs+89v4W8p9tO2CQOmZCsj4FCl0flJ7JFdhKMuyY/RBPoT1l2cL7LdpxjOZ/CLW+QiSj37jQ1/HNp2gBMWuena27ni3Z/RQFyYlfmcNfNm18t4O9uWgHZR80POZPqN2ImZX1Jj/jk7XxJmQGVHPDF5YBLn7XwqUJS7trmrWTDQkArut5LtA6z2LX2S7X+6s6WFuyipGgUgR/02SK/Un0PZQxOqN6wyMialdIEsn7P7J24pmmzDsnbBRSvXd7fGJ+FeHQrY5ZS2t+Q+MmOYI0HcwNIn71woUuolI4clelII8nArV/jeLWh8gO9zKmUexvzCu5HAiJmt+onbjGFQjJTo"
+                    });
+                    console.log(readyWorker);
+                    var PDFUI = UIExtension.PDFUI;
+                    var Events = UIExtension.PDFViewCtrl.Events;
+                    var pdfui = new PDFUI({
+                        viewerOptions: {
+                            libPath: "https://webviewer-demo.foxitsoftware.com/lib/",
+                            jr: {
+                                readyWorker: readyWorker
+                            }
+                        },
+                        renderTo: "#pdf-ui",
+                        appearance: UIExtension.appearances.adaptive,
+                        fragments: [],
+                        addons: [
+                            "https://webviewer-demo.foxitsoftware.com/lib/uix-addons/file-property",
+                            "https://webviewer-demo.foxitsoftware.com/lib/uix-addons/multi-media",
+                            "https://webviewer-demo.foxitsoftware.com/lib/uix-addons/password-protect",
+                            "https://webviewer-demo.foxitsoftware.com/lib/uix-addons/redaction",
+                            "https://webviewer-demo.foxitsoftware.com/lib/uix-addons/path-objects",
+                            "https://webviewer-demo.foxitsoftware.com/lib/uix-addons/print",
+                            "https://webviewer-demo.foxitsoftware.com/lib/uix-addons/full-screen",
+                            "https://webviewer-demo.foxitsoftware.com/lib/uix-addons/import-form",
+                            "https://webviewer-demo.foxitsoftware.com/lib/uix-addons/export-form",
+                            "https://webviewer-demo.foxitsoftware.com/lib/uix-addons/undo-redo",
+                            "https://webviewer-demo.foxitsoftware.com/lib/uix-addons/h-continuous",
+                            "https://webviewer-demo.foxitsoftware.com/lib/uix-addons/h-single",
+                            "https://webviewer-demo.foxitsoftware.com/lib/uix-addons/h-facing"
+                        ].concat(
+                            UIExtension.PDFViewCtrl.DeviceInfo.isMobile
+                                ? []
+                                : "https://webviewer-demo.foxitsoftware.com/lib/uix-addons/text-object"
+                        )
+                    });
+                    pdfui.addUIEventListener("fullscreenchange", function (
+                        isFullscreen
+                    ) {
+                        if (isFullscreen) {
+                            document.body.classList.add("fv__pdfui-fullscreen-mode");
+                        } else {
+                            document.body.classList.remove("fv__pdfui-fullscreen-mode");
+                        }
+                    });
+
+                    function openLoadingLayer() {
+                        // return pdfui.getRootComponent()
+                        // .then(function(root) {
+                        //     return root.getComponentByName('pdf-viewer')
+                        // }) .then(function(viewerComponent) {
+                        //     return pdfui.loading(viewerComponent.element);
+                        // });
+                        return pdfui.loading();
+                    }
+                    var loadingComponentPromise = openLoadingLayer();
+
+                    pdfui.addViewerEventListener(Events.beforeOpenFile, function () {
+                        if (loadingComponentPromise) {
+                            loadingComponentPromise = loadingComponentPromise
+                                .then(function (component) {
+                                    component.close();
+                                })
+                                .then(openLoadingLayer);
+                        } else {
+                            loadingComponentPromise = openLoadingLayer();
+                        }
+                    });
+                    pdfui.addViewerEventListener(Events.openFileSuccess, function () {
+                        loadingComponentPromise.then(function (component) {
+                            component.close();
+                        });
+                    });
+                    pdfui.addViewerEventListener(Events.openFileFailed, function () {
+                        loadingComponentPromise.then(function (component) {
+                            component.close();
+                        });
+                    });
+
+                    //pdfui.openPDFByHttpRangeRequest(
+                    //    {
+                    //        range: {
+                    //            url:
+                    //                "https://webviewer-demo.foxitsoftware.com/docs/FoxitPDFSDKforWeb_DemoGuide.pdf"
+                    //        }
+                    //    },
+                    //    {
+                    //        fileName: "FoxitPDFSDKforWeb_DemoGuide.pdf"
+                    //    }
+                    //);
+                    fetch("https://devcloudapi.FoxitSoftware.com/docs/FoxitPDFSDKforWeb_DemoGuide.pdf").then(function (response) {
+                        response.arrayBuffer().then(function (buffer) {
+                            pdfui.openPDFByFile(
+                                buffer,
+                                { fileName: "FoxitPDFSDKforWeb_DemoGuide.pdf" }
+                            );
+                        })
+                    })
+
+
+                    window.onresize = function () {
+                        pdfui.redraw().catch(function () { });
+                    };
+                }
+            }
+        };
+        xhr.responseType = "blob";
+        xhr.open(
+            "GET",
+            "https://webviewer-demo.foxitsoftware.com/lib/WebPDFJRWorker.js?h=" +
+            Math.random(),
+            true
+        );
+        xhr.send();
+    </script>
+</body>
+</html>
