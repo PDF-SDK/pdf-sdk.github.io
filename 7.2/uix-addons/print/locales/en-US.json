@@ -1,0 +1,27 @@
+{
+    "dialog":{
+        "close":"Close",
+        "cancel":"Cancel",
+        "ok":"OK",
+        "printDialog":{
+            "title":"Print Settings",
+            "range": "Print range",
+            "all": "All",
+            "current":"Current Page",
+            "from":"Pages from",
+            "to": "to",
+            "assign": "Pages",
+            "comments": "Comments",
+            "printComments": "Print comments",
+            "printer": "Printer"
+        },
+        "printProcess": "In print",
+        "unsupported": {
+            "title": "Prompt",
+            "message": "Your current browser doesn't support printing."
+        }
+    },
+    "button-tooltip": {
+        "title": "Print"
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "buttons": {
+        "title": "密码保护",
+        "removeTitle": "去除保护",
+        "inputOwnerPassword": "请输入文档所有者密码："
+    },
+    "warning": {
+        "incorrect-owner-pwd": "密码错误",
+        "security-reset-pwd": "安全原因，需要您重置文档打开密码"
+    },
+    "error": {
+        "open-pwd-not-match": "文档打开密码不正确！",
+        "permission-pwd-not-match": "文档权限密码不正确！",
+        "open-owner-pwd-cannot-same": "文档的打开密码和所有者密码不可以一样，请在文档打开密码表单处或者所有者密码表单处输入不同的密码。",
+        "admin-pwd-cannot-blank": "管理员密码不能为空！"
+    },
+    "dialog": {
+        "warn": "警告：",
+        "error": "错误：",
+        "doc-open-caption": "文档打开设置",
+        "password-check-hint": "需要输入打开密码打开此文档",
+        "password-label": "设置密码: ",
+        "password-confirm-label": "确认密码: ",
+        "document-restriction-caption": "文档权限设置",
+        "add-document-restriction": "所有文档权限",
+        "permission-specific-caption": "权限详情",
+        "printing-label": "打印权限: ",
+        "printing-none": "无",
+        "printing-low": "低分辨率(150 dpi)",
+        "printing-high": "高分辨率",
+        "perm-access-label": "访问权限:",
+        "perm-copy-label": "复制权限:",
+        "perm-change-label": "更改权限:",
+        "perm-changes-none": "无",
+        "perm-changes-1": "插入、删除、旋转页面",
+        "perm-changes-2": "填写表单以及签署已经存在的签名域",
+        "perm-changes-3": "注释、填写表单、签署已经存在的签名域",
+        "perm-changes-4": "提取页面外的任何功能",
+        "encrypt-caption": "加密设置",
+        "enc-alg-label": "加密算法:",
+        "enc-no-metadata": "不加密元数据(M)",
+        "ok": "确定",
+        "cancel": "取消",
+        "remove": {
+            "confirmation": "您将要移除文档的安全保护，确定吗？"
+        }
+    }
+}

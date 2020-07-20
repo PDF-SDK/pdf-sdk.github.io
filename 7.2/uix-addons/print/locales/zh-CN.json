@@ -1,0 +1,27 @@
+{
+    "dialog":{
+        "close":"关闭",
+        "cancel":"取消",
+        "ok":"确定",
+        "printDialog":{
+            "title":"打印设置",
+            "range": "打印范围",
+            "all": "全部页面",
+            "current":"当前页面",
+            "from":"从",
+            "to": "到",
+            "assign": "指定页面",
+            "comments": "注释",
+            "printComments": "打印注释",
+            "printer": "打印机"
+        },
+        "printProcess": "正在打印中",
+        "unsupported": {
+            "title": "提示",
+            "message": "您当前的浏览器不支持打印功能。"
+        }
+    },
+    "button-tooltip": {
+        "title": "打印"
+    }
+}
